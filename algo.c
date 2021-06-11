@@ -1,23 +1,22 @@
 #include<stdio.h>
- 
+#include<math.h>
+
 int main(){
 
+	int i = 0, num = 5214, a = 0, result = 0;
 
-        char  month[12][3] = {"Jan", "Feb", "Mar","Apr", "Mai", "Jun", "jul", "Aug", "Sep", "Oct", "Nov", "Dec"}; 
-
-        int n = 0;
-	int i = 0;
-        printf("Enter a Number");
-	scanf("%d", &n);
-
-        for( i = 0; i < 3; i++){
+	while(num != 0) {
+	
+		a = num % 10;
+		num = num / 10;
 		
-		printf("%c", month[n-1][i]);		
+		result = result + (a * pow(8, i));
+		i++;
+		printf("a = %d, num = %d, result = %d \n", a, num, result);
 
 	}
 
-	printf("\n");
-
+	printf("%d\n", result);
         return 0;
 
 
