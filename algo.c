@@ -1,24 +1,30 @@
 #include<stdio.h>
-#include<math.h>
+#include<string.h>
 
 int main(){
 
-	int i = 0, num = 5214, a = 0, result = 0;
-
-	while(num != 0) {
+	char password[] = "1234";
+	char userpass[20] = "";
 	
-		a = num % 10;
-		num = num / 10;
-		
-		result = result + (a * pow(8, i));
-		i++;
-		printf("a = %d, num = %d, result = %d \n", a, num, result);
+	printf("Input the password : ");
+	scanf("%s", userpass);
 
+	int i = 0;
+	int a = 0;
+	while(i < strlen(userpass)){
+
+		if(password[i] != userpass[i]){
+			a = 1;
+			break;
+		}	
+		i++;
 	}
 
-	printf("%d\n", result);
-        return 0;
-
-
+	if(a == 0){
+		printf("Correct password\n");
+	}
+	else{
+		printf("Incorrect password\n");
+	}
 
 }
